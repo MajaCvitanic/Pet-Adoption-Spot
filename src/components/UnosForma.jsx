@@ -57,64 +57,76 @@ const UnosForma = (props) => {
 
 	return (
 		<>
-			<form onSubmit={saljiPodatke}>
-				<div className="flex justify-center bg-slate-500">
-					<label>
-						Name:
-						<input
-							type="text"
-							name="name"
-							value={formaPodaci.name}
-							onChange={promjenaUlaza}
-							//Dodati required
-						/>
-					</label>
-					<label>
-						Age:
-						<input
-							type="text"
-							name="age"
-							value={formaPodaci.age}
-							onChange={promjenaUlaza}
-						/>
-					</label>
-					<label>
-						Sort:
-						<select
-							label="sort"
-							name="sort"
-							value={formaPodaci.sort}
-							onChange={promjenaUlaza}
-						>
-							{options.map((option) => (
-								<option key={option} value={option}>
-									{option}
-								</option>
-							))}
-						</select>
-					</label>
-					<label>
-						Image:
-						<input
-							type="url"
-							name="image"
-							value={formaPodaci.image}
-							onChange={promjenaUlaza}
-						/>
-					</label>
-					<label>
-						Description:
-						<textarea
-							type="text"
-							name="paragraf"
-							value={formaPodaci.paragraf}
-							onChange={promjenaUlaza}
-						/>
-					</label>
-				</div>
+			<div class="flex justify-center mb-8">
+				<form class="w-full max-w-lg" onSubmit={saljiPodatke}>
+					<div className="grid gap-8 mb-6 lg:mb-16 md:grid-cols-2">
+						<label>
+							Name:
+							<input
+								class="w-full p-3 shadow appearance-none border rounded dark:bg-gray-800"
+								type="text"
+								name="name"
+								value={formaPodaci.name}
+								onChange={promjenaUlaza}
+								//Dodati required
+							/>
+						</label>
+						<label>
+							Age:
+							<input
+								class="w-full p-3 shadow appearance-none border rounded dark:bg-gray-800"
+								type="text"
+								name="age"
+								value={formaPodaci.age}
+								onChange={promjenaUlaza}
+							/>
+						</label>
+						<label>
+							Sort:
+							<select
+								class="w-full p-3 shadow appearance-none border rounded dark:bg-gray-800"
+								label="sort"
+								name="sort"
+								value={formaPodaci.sort}
+								onChange={promjenaUlaza}
+							>
+								{options.map((option) => (
+									<option key={option} value={option}>
+										{option}
+									</option>
+								))}
+							</select>
+						</label>
+						<label>
+							Image:
+							<input
+								class="w-full p-3 shadow appearance-none border rounded dark:bg-gray-800"
+								type="url"
+								name="image"
+								value={formaPodaci.image}
+								onChange={promjenaUlaza}
+							/>
+						</label>
+						<label>
+							Description:
+							<textarea
+								class="resize-y appearance-none block  w-full p-3 shadow  border rounded dark:bg-gray-800"
+								type="text"
+								name="paragraf"
+								value={formaPodaci.paragraf}
+								onChange={promjenaUlaza}
+							/>
+						</label>
+					</div>
 
-				<button type="submit">Add Pet</button>
-			</form>
+					<button
+						class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded h-10"
+						type="submit"
+					>
+						Add Pet
+					</button>
+				</form>
+			</div>
 		</>
 	);
 };

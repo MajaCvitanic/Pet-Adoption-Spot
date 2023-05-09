@@ -19,7 +19,7 @@ const HomePets = () => {
 	return (
 		<>
 			<section class="bg-white dark:bg-gray-900 ">
-				<div>
+				<div className="m-auto">
 					<div
 						class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6 
 						relative bg-[url(https://images.unsplash.com/photo-1623387641168-d9803ddd3f35?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cGV0c3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60)] bg-cover bg-center bg-no-repeat "
@@ -53,7 +53,7 @@ const HomePets = () => {
 						</div>
 					</div>
 				</div>
-				<div className="flex mb-4 ">
+				<div className=" mb-4 ">
 					<Pets pets={pets} setPets={setPets} />
 				</div>{" "}
 			</section>

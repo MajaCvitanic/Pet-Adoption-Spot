@@ -3,12 +3,16 @@ import { HeartIcon } from "@heroicons/react/24/solid";
 
 const Kartica = ({ rez }) => {
 	const [isAdopted, setIsAdopted] = useState(
-		localStorage.getItem(rez.id) === "true" // Check if the id is already in localStorage
+		localStorage.getItem(rez.id) === "true"
 	);
-	const [isFavorite, setIsFavorite] = useState(false);
+
+	const [isFavorite, setIsFavorite] = useState(
+		localStorage.getItem(`favorite_${rez.id}`) === "true"
+	);
+
 	const handleAdoptClick = () => {
 		setIsAdopted(true);
-		localStorage.setItem(rez.id, true); // Set the id in localStorage
+		localStorage.setItem(rez.id, true);
 	};
 	const toggleDisabled = () => {
 		setIsAdopted(false);
@@ -18,8 +22,12 @@ const Kartica = ({ rez }) => {
 		setIsFavorite(!isFavorite);
 	};
 	useEffect(() => {
+		localStorage.setItem(`favorite_${rez.id}`, isFavorite);
+	}, [isFavorite, rez.id]);
+
+	useEffect(() => {
 		if (localStorage.getItem(rez.id) === "true") {
-			setIsAdopted(true); // Update the state if the id is already in localStorage
+			setIsAdopted(true);
 		}
 	}, [rez.id]);
 	return (
@@ -38,7 +46,7 @@ const Kartica = ({ rez }) => {
 					<div class="flex bg-gray-100 rounded mb-4">
 						<div class="relative ">
 							<img
-								class="w-64 h-52 aspect-w-4 aspect-h-3 rounded-lg sm:rounded-none sm:rounded-l-lg"
+								class="w-60 h-52 aspect-w-3 aspect-h-3 rounded-lg sm:rounded-none sm:rounded-l-lg"
 								src={rez.image}
 								alt={`${rez.name} Avatar`}
 							></img>
