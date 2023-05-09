@@ -92,7 +92,7 @@ const Pets = ({ pets, setPets }) => {
 					</div>
 				)}
 			</div>
-			<UnosForma setPets={setPets} />
+			{/* <UnosForma setPets={setPets} /> */}
 		</>
 	);
 };
