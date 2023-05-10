@@ -1,49 +1,17 @@
 {
   "pets": [
     {
-      "id": 4,
-      "name": "Evan",
-      "age": "6",
-      "image": "https://images.unsplash.com/photo-1447029080250-270ded608d91?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80\"",
-      "paragraf": "Puppy is best",
-      "sort": "Dog"
-    },
-    {
-      "name": "Bubbie",
-      "age": "9",
-      "image": "https://images.unsplash.com/photo-1447029080250-270ded608d91?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80\"",
-      "paragraf": "Olddie but goodie",
-      "sort": "Dog",
-      "id": 5
-    },
-    {
-      "name": "Legos",
-      "age": "2",
-      "image": "https://images.unsplash.com/photo-1512251275231-63e355f3d028?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-      "paragraf": "Jesse is from London.",
-      "sort": "Dog",
-      "id": 6
-    },
-    {
-      "name": "Gru",
-      "age": "4",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Golde33443.jpg/220px-Golde33443.jpg",
-      "paragraf": "not a dog",
-      "sort": "Cat",
-      "id": 7
-    },
-    {
-      "name": "Flash",
+      "name": "Flashy32",
       "age": "3",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Cara_de_quem_caiu_do_caminh%C3%A3o..._%28cropped%29.jpg/220px-Cara_de_quem_caiu_do_caminh%C3%A3o..._%28cropped%29.jpg",
+      "image": "https://images.unsplash.com/photo-1512251275231-63e355f3d028?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80\"",
       "paragraf": "Beaggle?",
       "sort": "Dog",
       "id": 8
     },
     {
-      "name": "Kloe",
+      "name": "Kloey",
       "age": "4",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Golde33443.jpg/220px-Golde33443.jpg",
+      "image": "https://images.unsplash.com/photo-1592754862816-1a21a4ea2281?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8cGV0c3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
       "paragraf": "Whoooo",
       "sort": "Dog",
       "id": 9
@@ -75,7 +43,7 @@
     {
       "name": "Skip",
       "age": "4",
-      "image": "https://images.unsplash.com/photo-1592754862816-1a21a4ea2281?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8cGV0c3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+      "image": "https://images.unsplash.com/photo-1512251275231-63e355f3d028?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
       "paragraf": "Can we skip to the good part?",
       "sort": "",
       "id": 13
@@ -87,22 +55,6 @@
       "paragraf": "Cards?",
       "sort": "Cat",
       "id": 14
-    },
-    {
-      "name": "Bang",
-      "age": "3",
-      "image": "https://images.unsplash.com/photo-1512251275231-63e355f3d028?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-      "paragraf": "Bugs?",
-      "sort": "Other",
-      "id": 15
-    },
-    {
-      "name": "Sleep",
-      "age": "7",
-      "image": "https://images.unsplash.com/photo-1512251275231-63e355f3d028?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80\"",
-      "paragraf": "now please",
-      "sort": "Cat",
-      "id": 16
     }
   ],
   "sort": [

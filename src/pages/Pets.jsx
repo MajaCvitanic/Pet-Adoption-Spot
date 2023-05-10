@@ -73,25 +73,25 @@ const Pets = ({ pets, setPets }) => {
 			</div>
 
 			<div className="m-auto">
-				{showFiltered ? (
-					// display filtered pets
-					<div className="m-8 grid grid-cols-1 gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-						{filteredPets.map((pet) => (
-							<Kartica key={pet.id} rez={pet} />
-						))}
-					</div>
-				) : (
-					// display all pets
-					<div
-						className="m-10 grid grid-cols-1 gap-6 sm:grid-cols-1 md
-:grid-cols-2 lg:grid-cols-3"
-					>
-						{pets.map((pet) => (
-							<Kartica key={pet.id} rez={pet} />
-						))}
-					</div>
-				)}
+				<div className="m-8 grid grid-cols-1 gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+					{showFiltered
+						? filteredPets.map((pet) => (
+								<Kartica
+									key={pet.id}
+									rez={pet}
+									setPets={setPets}
+								/>
+						  ))
+						: pets.map((pet) => (
+								<Kartica
+									key={pet.id}
+									rez={pet}
+									setPets={setPets}
+								/>
+						  ))}
+				</div>
 			</div>
+
 			{/* <UnosForma setPets={setPets} /> */}
 		</>
 	);
