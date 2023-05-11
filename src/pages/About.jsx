@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "../components/Footer";
 
 function About() {
 	return (
@@ -27,7 +28,7 @@ function About() {
 			</section>
 			<div className="grid max-w-screen-xl grid-cols-1 gap-8 px-8 py-16 mx-auto rounded-lg md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 dark:bg-gray-800 dark:text-gray-100">
 				<div className="flex flex-col justify-between">
-					<div className="space-y-2">
+					<div className="space-y-2" id="contact-div">
 						<h2 className="mb-1 p-6 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
 							Let's talk!
 						</h2>
@@ -223,6 +224,7 @@ function About() {
 					</div>
 				</div>
 			</div>
+			<Footer />
 		</div>
 	);
 }

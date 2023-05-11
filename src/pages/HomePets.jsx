@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./Pets.css";
-import UnosForma from "../components/UnosForma";
+// import UnosForma from "../components/UnosForma";
 
 import Pets from "./Pets";
 //App.js
