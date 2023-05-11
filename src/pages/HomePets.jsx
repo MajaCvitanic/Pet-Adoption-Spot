@@ -8,6 +8,7 @@ import Pets from "./Pets";
 
 const HomePets = () => {
 	const [pets, setPets] = useState([]);
+	const [isChecked, setIsChecked] = useState(false);
 
 	useEffect(() => {
 		axios
@@ -54,7 +55,11 @@ const HomePets = () => {
 					</div>
 				</div>
 				<div className=" mb-4 ">
-					<Pets pets={pets} setPets={setPets} />
+					<Pets
+						pets={pets}
+						setPets={setPets}
+						setIsChecked={setIsChecked}
+					/>
 				</div>{" "}
 			</section>
 			<div>

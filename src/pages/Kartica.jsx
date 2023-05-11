@@ -6,14 +6,23 @@ const Kartica = ({ rez, setPets }) => {
 	const [mijenjamo, postaviMjenjamo] = useState(false);
 	const [formaPodaci, postaviFormaPodaci] = useState({});
 	const [sort, setSort] = useState();
-
+	const [isChecked, setIsChecked] = useState(false);
 	const [isAdopted, setIsAdopted] = useState(
 		localStorage.getItem(rez.id) === "true"
 	);
 	const [isFavorite, setIsFavorite] = useState(
 		localStorage.getItem(`favorite_${rez.id}`) === "true"
 	);
-
+	const handleCheckboxChange = (event) => {
+		setIsChecked(event.target.checked);
+	};
+	// const handleCheckboxChange = () => {
+	// 	const updatedPet = { ...rez, isFavorite: !isChecked };
+	// 	setIsChecked(!isChecked);
+	// 	setPets((prevPets) =>
+	// 		prevPets.map((pet) => (pet.id === rez.id ? updatedPet : pet))
+	// 	);
+	// };
 	async function brisiPodatak() {
 		const potvrda = window.confirm(
 			"Jeste li sigurni da želite obrisati ovaj podatak?"
@@ -98,6 +107,21 @@ const Kartica = ({ rez, setPets }) => {
 	}, [rez.id]);
 	return (
 		<div>
+			<div className="static m-2">
+				<label class="absolute bottom-0 right-0 inline-flex items-center cursor-pointer ">
+					<input
+						type="checkbox"
+						value=""
+						class="sr-only peer"
+						checked={isChecked}
+						onChange={handleCheckboxChange}
+					/>
+					<div class="w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+					<span class="ml-3 text-sm font-medium text-white dark:text-gray-300">
+						EMPLOYEE
+					</span>
+				</label>
+			</div>
 			{/* <p>{rez.name}</p>
 			<img src={rez.image} alt={rez.name} />
 			<p>{rez.paragraph}</p>
@@ -176,25 +200,36 @@ const Kartica = ({ rez, setPets }) => {
 						</p>
 					</div>
 				</div>
-				<button onClick={toggleDisabled}>Helper Button</button>
+
 				<button
 					class={`absolute bottom-2 right-2 text-red-500 focus:outline-none ${
 						isFavorite ? "text-red-600" : ""
 					}`}
 					onClick={handleFavoriteClick}
 				></button>
-				{mijenjamo ? (
-					<button className="bg-pink-100" onClick={spremiPodatke}>
-						Spremi
-					</button>
-				) : (
-					<button className="bg-pink-500" onClick={pokreniUredivanje}>
-						Uredi
-					</button>
-				)}
-				<button className="bg-blue-500" onClick={brisiPodatak}>
-					Obriši
-				</button>
+				{isChecked ? (
+					<>
+						{mijenjamo ? (
+							<button
+								className="bg-pink-100"
+								onClick={spremiPodatke}
+							>
+								Spremi
+							</button>
+						) : (
+							<button
+								className="bg-pink-500"
+								onClick={pokreniUredivanje}
+							>
+								Uredi
+							</button>
+						)}
+						<button className="bg-blue-500" onClick={brisiPodatak}>
+							Obriši
+						</button>
+						<button onClick={toggleDisabled}>Helper Button</button>
+					</>
+				) : null}
 			</section>
 		</div>
 	);

@@ -7,7 +7,7 @@ import { HeartIcon } from "@heroicons/react/24/solid";
 import Kartica from "./Kartica";
 //Tablica
 
-const Pets = ({ pets, setPets }) => {
+const Pets = ({ pets, setPets, props }) => {
 	const [filterSort, setFilterSort] = useState("");
 	const [filteredPets, setFilteredPets] = useState(pets);
 	const [showFiltered, setShowFiltered] = useState(false);
@@ -32,11 +32,6 @@ const Pets = ({ pets, setPets }) => {
 	const handleShowAllButtonClick = () => {
 		setFilteredPets(pets);
 		setShowFiltered(false);
-	};
-	const handleFilterFavoriteClick = () => {
-		const favoritePets = pets.filter((pet) => pet.isFavorite);
-		setFilteredPets(favoritePets);
-		setShowFiltered(true);
 	};
 
 	return (
@@ -80,19 +75,21 @@ const Pets = ({ pets, setPets }) => {
 									key={pet.id}
 									rez={pet}
 									setPets={setPets}
+									// isChecked={isChecked}
+									// checked={pet.isChecked}
 								/>
 						  ))
-						: pets.map((pet) => (
-								<Kartica
-									key={pet.id}
-									rez={pet}
-									setPets={setPets}
-								/>
-						  ))}
+						: pets.map((pet) => {
+								return (
+									<Kartica
+										key={pet.id}
+										rez={pet}
+										setPets={setPets}
+									/>
+								);
+						  })}
 				</div>
 			</div>
-
-			{/* <UnosForma setPets={setPets} /> */}
 		</>
 	);
 };
