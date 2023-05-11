@@ -2,13 +2,12 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./Pets.css";
 import UnosForma from "../components/UnosForma";
-import Pet from "../components/Pet";
+
 import Pets from "./Pets";
 //App.js
 
 const HomePets = () => {
 	const [pets, setPets] = useState([]);
-	const [isChecked, setIsChecked] = useState(false);
 
 	useEffect(() => {
 		axios
@@ -16,7 +15,6 @@ const HomePets = () => {
 			.then((res) => setPets(res.data))
 			.catch((err) => console.log(err.message));
 	}, []);
-
 	return (
 		<>
 			<section class="bg-white dark:bg-gray-900 ">
@@ -53,13 +51,10 @@ const HomePets = () => {
 							</div>
 						</div>
 					</div>
+					<div className="static m-2"></div>
 				</div>
 				<div className=" mb-4 ">
-					<Pets
-						pets={pets}
-						setPets={setPets}
-						setIsChecked={setIsChecked}
-					/>
+					<Pets pets={pets} setPets={setPets} />
 				</div>{" "}
 			</section>
 			<div>

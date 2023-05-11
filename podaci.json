@@ -55,6 +55,14 @@
       "paragraf": "Cards?",
       "sort": "Cat",
       "id": 14
+    },
+    {
+      "name": "Skip",
+      "age": "3",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Cara_de_quem_caiu_do_caminh%C3%A3o..._%28cropped%29.jpg/220px-Cara_de_quem_caiu_do_caminh%C3%A3o..._%28cropped%29.jpg",
+      "paragraf": "It?",
+      "sort": "",
+      "id": 15
     }
   ],
   "sort": [

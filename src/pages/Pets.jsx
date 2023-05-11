@@ -1,17 +1,15 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+
 import "./Pets.css";
-import UnosForma from "../components/UnosForma";
-import Pet from "../components/Pet";
-import { HeartIcon } from "@heroicons/react/24/solid";
+
 import Kartica from "./Kartica";
 //Tablica
 
-const Pets = ({ pets, setPets, props }) => {
+const Pets = ({ pets, setPets }) => {
 	const [filterSort, setFilterSort] = useState("");
 	const [filteredPets, setFilteredPets] = useState(pets);
 	const [showFiltered, setShowFiltered] = useState(false);
-
+	const [isChecked, setIsChecked] = useState(false);
 	const options = ["Dog", "Cat", "Other"];
 
 	const handleFilterSortChange = (event) => {
@@ -66,7 +64,22 @@ const Pets = ({ pets, setPets, props }) => {
 					Show All
 				</button>
 			</div>
+			<div className=" m-2 relative ">
+				<label class="absolute bottom-0 left-0 inline-flex items-center cursor-pointer ">
+					<input
+						type="checkbox"
+						value=""
+						class="sr-only peer"
+						checked={isChecked}
+						onChange={() => setIsChecked(!isChecked)}
+					/>
 
+					<div class="w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+				</label>
+			</div>
+			<span class="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300">
+				EMPLOYEE
+			</span>
 			<div className="m-auto">
 				<div className="m-8 grid grid-cols-1 gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
 					{showFiltered
@@ -75,19 +88,17 @@ const Pets = ({ pets, setPets, props }) => {
 									key={pet.id}
 									rez={pet}
 									setPets={setPets}
-									// isChecked={isChecked}
-									// checked={pet.isChecked}
+									isChecked={isChecked}
 								/>
 						  ))
-						: pets.map((pet) => {
-								return (
-									<Kartica
-										key={pet.id}
-										rez={pet}
-										setPets={setPets}
-									/>
-								);
-						  })}
+						: pets.map((pet) => (
+								<Kartica
+									key={pet.id}
+									rez={pet}
+									setPets={setPets}
+									isChecked={isChecked}
+								/>
+						  ))}
 				</div>
 			</div>
 		</>
