@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import UnosForma from "../components/UnosForma";
 
 import "./Pets.css";
 
@@ -100,6 +101,13 @@ const Pets = ({ pets, setPets }) => {
 								/>
 						  ))}
 				</div>
+			</div>
+			<div style={{ display: isChecked ? "block" : "none" }}>
+				<UnosForma
+					setPets={setPets}
+					sort={setPets.sort}
+					isChecked={isChecked}
+				/>
 			</div>
 		</>
 	);

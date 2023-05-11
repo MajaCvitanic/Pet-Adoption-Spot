@@ -57,9 +57,9 @@ const HomePets = () => {
 					<Pets pets={pets} setPets={setPets} />
 				</div>{" "}
 			</section>
-			<div>
+			{/* <div>
 				<UnosForma setPets={setPets} sort={setPets.sort} />
-			</div>
+			</div> */}
 		</>
 	);
 };
